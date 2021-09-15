@@ -18,7 +18,7 @@ app.get("/json", (req, res) => {
 
 
 
-  if (process.env.VAR_NAME === "allCaps") {
+  if (process.env.VAR_NAME === "uppercase") {
     response = "Hello JSON".toUpperCase();
   } else {
     response = "Hello json";
