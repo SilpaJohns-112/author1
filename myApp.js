@@ -27,7 +27,7 @@ app.use("/public", express.static(__dirname + "/public"));
     });
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
-    console.log(bodyParser);
+    //console.log(bodyParser);
 
     app.get(
         "/now",
@@ -62,8 +62,11 @@ res.json({
 });
 
 
+app.post("/name", function(req, res) {
 
-
+    var string = req.body.first + " " + req.body.last;
+    res.json({ name: string });
+  });
 
 
 
