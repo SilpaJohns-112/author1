@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var bodyParser=require('body-parser');
 console.log("Hello World");
 app.get("/", function(req, res) {
   
@@ -24,7 +25,9 @@ app.use("/public", express.static(__dirname + "/public"));
         console.log(req.method + " " + req.path + " - " + req.ip);
         next();
     });
-
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
+    console.log(bodyParser);
 
     app.get(
         "/now",
