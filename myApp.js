@@ -25,7 +25,7 @@ app.use("/public", express.static(__dirname + "/public"));
         next();
     });
 
-    
+
     app.get(
         "/now",
         (req, res, next) => {
@@ -39,6 +39,13 @@ app.use("/public", express.static(__dirname + "/public"));
         }
       );
 
+
+app.get("/:word/echo", (req, res) => {
+  const { word } = req.params;
+  res.json({
+    echo: word
+  });
+});
 
 
 
